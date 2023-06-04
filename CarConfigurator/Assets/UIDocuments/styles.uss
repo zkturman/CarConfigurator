@@ -1,0 +1,38 @@
+.menu-label-generic {
+    -unity-font-definition: initial;
+    -unity-font: url('project://database/Assets/AssetPacks/Inkfree.ttf?fileID=12800000&guid=bc8338ba4ff5f6c45888efa69b7f1fa0&type=3#Inkfree');
+    font-size: 25px;
+    -unity-font-style: bold;
+    -unity-text-align: upper-center;
+}
+
+.button-hover {
+    transition-duration: 0.1s;
+    scale: 1.2 1.2;
+}
+
+.button-click {
+    rotate: 10deg;
+    transition-duration: 0.2s;
+}
+
+.accessory-button {
+    flex-grow: 0;
+    background-color: rgb(255, 255, 255);
+    -unity-background-scale-mode: scale-to-fit;
+    border-left-color: rgb(70, 70, 70);
+    border-right-color: rgb(70, 70, 70);
+    border-top-color: rgb(70, 70, 70);
+    border-bottom-color: rgb(70, 70, 70);
+    width: 72px;
+    border-left-width: 3px;
+    border-right-width: 3px;
+    border-top-width: 3px;
+    border-bottom-width: 3px;
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+    height: 72px;
+    flex-shrink: 0;
+}

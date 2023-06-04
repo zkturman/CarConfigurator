@@ -1,0 +1,55 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UIDocuments/styles.uss?fileID=7433441132597879392&amp;guid=03b6865b1a4c19b4b92bc4c47be31bf4&amp;type=3#styles" />
+    <ui:VisualElement name="Background" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); width: 100%; height: 100%; flex-direction: row;">
+        <ui:VisualElement name="LeftArea" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); width: 28%; height: 100%;">
+            <ui:VisualElement name="ColourArea" style="flex-grow: 1; background-color: rgba(255, 0, 0, 0.33); height: 30%;">
+                <ui:Label tabindex="-1" text="Paint Colour" display-tooltip-when-elided="true" name="PaintLabel" class="menu-label-generic" style="-unity-text-align: upper-center;" />
+                <ui:VisualElement name="ColourButtons" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); flex-direction: row;">
+                    <ui:VisualElement name="ColourButton1" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); width: 36px; height: 36px; min-width: 36px; min-height: 36px; max-width: 36px; max-height: 48px; position: absolute;">
+                        <ui:VisualElement name="ButtonFill" focusable="true" picking-mode="Ignore" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); background-image: url(&apos;project://database/Assets/Sprites/ColorTile.png?fileID=2800000&amp;guid=34689321a61450e4385f87d95e1618b7&amp;type=3#ColorTile&apos;); position: absolute; -unity-background-scale-mode: scale-to-fit; width: 100%; height: 100%;" />
+                        <ui:VisualElement name="ButtonOutline" focusable="true" picking-mode="Ignore" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); background-image: url(&apos;project://database/Assets/Sprites/ColorTileBorder.png?fileID=2800000&amp;guid=e5f4b26ae1875224cbc3a2a5a35665d7&amp;type=3#ColorTileBorder&apos;); position: absolute; -unity-background-scale-mode: scale-to-fit; width: 100%; height: 100%;" />
+                    </ui:VisualElement>
+                    <ui:VisualElement name="ColourButton2" focusable="false" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); width: 36px; height: 36px; min-width: 36px; min-height: 36px; max-width: 36px; max-height: 48px; position: absolute; top: 16px; left: 27px;">
+                        <ui:VisualElement name="ButtonFill" focusable="true" picking-mode="Ignore" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); background-image: url(&apos;project://database/Assets/Sprites/ColorTile.png?fileID=2800000&amp;guid=34689321a61450e4385f87d95e1618b7&amp;type=3#ColorTile&apos;); position: absolute; -unity-background-scale-mode: scale-to-fit; width: 100%; height: 100%;" />
+                        <ui:VisualElement name="ButtonOutline" focusable="true" picking-mode="Ignore" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); background-image: url(&apos;project://database/Assets/Sprites/ColorTileBorder.png?fileID=2800000&amp;guid=e5f4b26ae1875224cbc3a2a5a35665d7&amp;type=3#ColorTileBorder&apos;); position: absolute; -unity-background-scale-mode: scale-to-fit; width: 100%; height: 100%;" />
+                    </ui:VisualElement>
+                </ui:VisualElement>
+            </ui:VisualElement>
+            <ui:VisualElement name="AccessoryArea" style="flex-grow: 1; background-color: rgba(0, 250, 255, 0.32); height: 50%;">
+                <ui:Label tabindex="-1" text="Accessory" display-tooltip-when-elided="true" name="AccessoryLabel" enable-rich-text="true" class="menu-label-generic" style="-unity-text-align: upper-center;" />
+                <ui:VisualElement name="AccessoryElement1" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); flex-direction: row; flex-shrink: 1; height: 96px;">
+                    <ui:VisualElement name="AccessoryInfo" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0);">
+                        <ui:Label tabindex="-1" text="The Javelin" display-tooltip-when-elided="true" name="AccessoryName" class="menu-label-generic" style="font-size: 22px;" />
+                        <ui:Label tabindex="-1" text="$500" display-tooltip-when-elided="true" name="AccessoryCost" class="menu-label-generic" style="font-size: 18px;" />
+                    </ui:VisualElement>
+                    <ui:VisualElement name="AccessoryImage" class="accessory-button" style="background-image: url(&apos;project://database/Assets/Sprites/JavelinIcon.png?fileID=2800000&amp;guid=d24b7b1a413461441900fdba9fa6b44f&amp;type=3#JavelinIcon&apos;); flex-grow: 0;" />
+                </ui:VisualElement>
+                <ui:VisualElement name="AccessoryElement2" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); flex-direction: row; flex-shrink: 1; height: 96px;">
+                    <ui:VisualElement name="AccessoryInfo" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0);">
+                        <ui:Label tabindex="-1" text="The Hammer" display-tooltip-when-elided="true" name="AccessoryName" class="menu-label-generic" style="font-size: 22px;" />
+                        <ui:Label tabindex="-1" text="$750" display-tooltip-when-elided="true" name="AccessoryCost" class="menu-label-generic" style="font-size: 18px;" />
+                    </ui:VisualElement>
+                    <ui:VisualElement name="AccessoryImage" class="accessory-button" style="background-image: url(&apos;project://database/Assets/Sprites/HammerIcon.png?fileID=2800000&amp;guid=94464131acca6524996acfdb9720cb32&amp;type=3#HammerIcon&apos;); flex-grow: 0;" />
+                </ui:VisualElement>
+                <ui:VisualElement name="AccessoryElement3" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); flex-direction: row; flex-shrink: 1; height: 96px;">
+                    <ui:VisualElement name="AccessoryInfo" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0);">
+                        <ui:Label tabindex="-1" text="The Saw" display-tooltip-when-elided="true" name="AccessoryName" class="menu-label-generic" style="font-size: 22px;" />
+                        <ui:Label tabindex="-1" text="$620" display-tooltip-when-elided="true" name="AccessoryCost" class="menu-label-generic" style="font-size: 18px;" />
+                    </ui:VisualElement>
+                    <ui:VisualElement name="AccessoryImage" class="accessory-button" style="background-image: url(&apos;project://database/Assets/Sprites/SawIcon.png?fileID=2800000&amp;guid=86c7abeaa97780e47939c10a38b5acfa&amp;type=3#SawIcon&apos;); flex-grow: 0;" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement name="MiddleArea" style="flex-grow: 1; background-color: rgba(0, 140, 17, 0.28); width: 36%; height: 100%;">
+            <ui:VisualElement name="ModelRotator" style="flex-grow: 1; background-color: rgba(0, 140, 17, 0.28);" />
+        </ui:VisualElement>
+        <ui:VisualElement name="RightArea" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); width: 36%; height: 100%;">
+            <ui:VisualElement name="SpecsArea" style="flex-grow: 1; background-color: rgba(195, 104, 0, 0.44); height: 90%;">
+                <ui:Label tabindex="-1" text="Specs" display-tooltip-when-elided="true" name="SpecLabel" class="menu-label-generic" />
+            </ui:VisualElement>
+            <ui:VisualElement name="CostArea" style="flex-grow: 1; background-color: rgba(142, 60, 137, 0.41); height: 10%;">
+                <ui:Label tabindex="-1" text="Cost: £0" display-tooltip-when-elided="true" name="CostLabel" class="menu-label-generic" style="-unity-text-align: upper-center;" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>
