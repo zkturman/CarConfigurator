@@ -2,7 +2,7 @@
     <Style src="project://database/Assets/UIDocuments/styles.uss?fileID=7433441132597879392&amp;guid=03b6865b1a4c19b4b92bc4c47be31bf4&amp;type=3#styles" />
     <ui:VisualElement name="Background" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); width: 100%; height: 100%; flex-direction: row;">
         <ui:VisualElement name="LeftArea" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); width: 28%; height: 100%;">
-            <ui:VisualElement name="ColourArea" style="flex-grow: 1; background-color: rgba(255, 0, 0, 0.33); height: 30%;">
+            <ui:VisualElement name="ColourArea" style="flex-grow: 1; background-color: rgba(255, 0, 0, 0); height: 30%;">
                 <ui:Label tabindex="-1" text="Paint Colour" display-tooltip-when-elided="true" name="PaintLabel" class="menu-label-generic" style="-unity-text-align: upper-center;" />
                 <ui:VisualElement name="ColourButtons" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); flex-direction: row;">
                     <ui:VisualElement name="ColourButton1" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); width: 128px; height: 128px; min-width: 36px; min-height: 36px; max-width: 256px; max-height: 256px; position: absolute; flex-direction: row; flex-shrink: 1; top: -9px; left: 31px;">
@@ -15,7 +15,7 @@
                     </ui:VisualElement>
                 </ui:VisualElement>
             </ui:VisualElement>
-            <ui:VisualElement name="AccessoryArea" style="flex-grow: 1; background-color: rgba(0, 250, 255, 0.32); height: 70%; align-items: center; justify-content: flex-start; padding-left: 5px; padding-right: 5px; padding-top: 5px; padding-bottom: 5px;">
+            <ui:VisualElement name="AccessoryArea" style="flex-grow: 1; background-color: rgba(0, 250, 255, 0); height: 70%; align-items: center; justify-content: flex-start; padding-left: 5px; padding-right: 5px; padding-top: 5px; padding-bottom: 5px;">
                 <ui:Label tabindex="-1" text="Accessory" display-tooltip-when-elided="true" name="AccessoryLabel" enable-rich-text="true" class="menu-label-generic" style="-unity-text-align: upper-center;" />
                 <ui:VisualElement name="AccessoryButtons" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); justify-content: space-between; max-width: 75%; align-items: center; max-height: 80%; margin-left: 20px; margin-right: 20px; margin-top: 20px; margin-bottom: 20px;">
                     <ui:VisualElement name="AccessoryElement1" class="accessory-button">
@@ -42,16 +42,23 @@
                 </ui:VisualElement>
             </ui:VisualElement>
         </ui:VisualElement>
-        <ui:VisualElement name="MiddleArea" style="flex-grow: 1; background-color: rgba(0, 140, 17, 0.28); width: 36%; height: 100%;">
-            <ui:VisualElement name="ModelRotator" style="flex-grow: 1; background-color: rgba(0, 140, 17, 0.28);" />
+        <ui:VisualElement name="MiddleArea" style="flex-grow: 1; background-color: rgba(0, 140, 17, 0); width: 36%; height: 100%; justify-content: flex-end;">
+            <ui:VisualElement name="ModelRotator" style="flex-grow: 0; background-color: rgba(0, 140, 17, 0); height: 20%; flex-direction: row; align-items: center; justify-content: space-between;">
+                <ui:VisualElement name="LeftButton" focusable="true" class="model-rotator-button" style="background-image: url(&apos;project://database/Assets/UnityDefaultRuntimeTheme.tss?fileID=-2236324273849735119&amp;guid=a62bb75d7fb33884da9de9532325da4b&amp;type=3#arrow-left@2x&apos;);" />
+                <ui:VisualElement name="ModelInfo" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0);">
+                    <ui:Label tabindex="-1" text="ModelName" display-tooltip-when-elided="true" name="ModelName" class="menu-label-generic" />
+                    <ui:Label tabindex="-1" text="£3500" display-tooltip-when-elided="true" name="Cost" class="menu-label-generic" style="font-size: 60px;" />
+                </ui:VisualElement>
+                <ui:VisualElement name="RightButton" focusable="true" class="model-rotator-button" style="background-color: rgba(0, 0, 0, 0); background-image: url(&apos;project://database/Assets/UnityDefaultRuntimeTheme.tss?fileID=-1087164816274819069&amp;guid=a62bb75d7fb33884da9de9532325da4b&amp;type=3#arrow-right@2x&apos;);" />
+            </ui:VisualElement>
         </ui:VisualElement>
         <ui:VisualElement name="RightArea" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); width: 36%; height: 100%;">
-            <ui:VisualElement name="SpecsArea" style="flex-grow: 1; background-color: rgba(195, 104, 0, 0.44); height: 90%;">
+            <ui:VisualElement name="SpecsArea" style="flex-grow: 1; background-color: rgba(195, 104, 0, 0); height: 90%;">
                 <ui:Label tabindex="-1" text="Specs" display-tooltip-when-elided="true" name="SpecLabel" class="menu-label-generic" />
                 <ui:VisualElement name="SpecData" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); justify-content: flex-start; align-items: center;">
                     <ui:VisualElement name="SpecSection1" style="flex-grow: 0; background-color: rgba(0, 0, 0, 0); flex-direction: row; width: 100%; justify-content: space-between; margin-left: 20px; margin-right: 20px; margin-top: 20px; margin-bottom: 20px;">
                         <ui:Label tabindex="-1" text="Speed" display-tooltip-when-elided="true" name="SpecLabel" class="menu-label-generic" />
-                        <ui:VisualElement name="SpecStatusBar" style="flex-grow: 0; background-color: rgba(0, 0, 0, 0); flex-direction: row; width: 80%;">
+                        <ui:VisualElement name="SpecStatusBar" style="flex-grow: 0; background-color: rgba(0, 0, 0, 0); flex-direction: row; width: 75%;">
                             <ui:VisualElement name="OfficialExample" class="status-bar-official" />
                             <ui:VisualElement name="AddExample" class="status-bar-add-preview" />
                             <ui:VisualElement name="RemoveExample" class="status-bar-remove-preview" />
@@ -59,7 +66,7 @@
                     </ui:VisualElement>
                     <ui:VisualElement name="SpecSection2" style="flex-grow: 0; background-color: rgba(0, 0, 0, 0); flex-direction: row; width: 100%; justify-content: space-between; margin-left: 20px; margin-right: 20px; margin-top: 20px; margin-bottom: 20px;">
                         <ui:Label tabindex="-1" text="Speed" display-tooltip-when-elided="true" name="SpecLabel" class="menu-label-generic" />
-                        <ui:VisualElement name="SpecStatusBar" style="flex-grow: 0; background-color: rgba(0, 0, 0, 0); flex-direction: row; width: 80%;">
+                        <ui:VisualElement name="SpecStatusBar" style="flex-grow: 0; background-color: rgba(0, 0, 0, 0); flex-direction: row; width: 75%;">
                             <ui:VisualElement name="OfficialExample" class="status-bar-official" />
                             <ui:VisualElement name="AddExample" class="status-bar-add-preview" />
                             <ui:VisualElement name="RemoveExample" class="status-bar-remove-preview" />
@@ -67,7 +74,7 @@
                     </ui:VisualElement>
                     <ui:VisualElement name="SpecSection3" style="flex-grow: 0; background-color: rgba(0, 0, 0, 0); flex-direction: row; width: 100%; justify-content: space-between; margin-left: 20px; margin-right: 20px; margin-top: 20px; margin-bottom: 20px;">
                         <ui:Label tabindex="-1" text="Speed" display-tooltip-when-elided="true" name="SpecLabel" class="menu-label-generic" />
-                        <ui:VisualElement name="SpecStatusBar" style="flex-grow: 0; background-color: rgba(0, 0, 0, 0); flex-direction: row; width: 80%;">
+                        <ui:VisualElement name="SpecStatusBar" style="flex-grow: 0; background-color: rgba(0, 0, 0, 0); flex-direction: row; width: 75%;">
                             <ui:VisualElement name="OfficialExample" class="status-bar-official" />
                             <ui:VisualElement name="AddExample" class="status-bar-add-preview" />
                             <ui:VisualElement name="RemoveExample" class="status-bar-remove-preview" />
@@ -75,7 +82,7 @@
                     </ui:VisualElement>
                     <ui:VisualElement name="SpecSection4" style="flex-grow: 0; background-color: rgba(0, 0, 0, 0); flex-direction: row; width: 100%; justify-content: space-between; margin-left: 20px; margin-right: 20px; margin-top: 20px; margin-bottom: 20px;">
                         <ui:Label tabindex="-1" text="Speed" display-tooltip-when-elided="true" name="SpecLabel" class="menu-label-generic" />
-                        <ui:VisualElement name="SpecStatusBar" style="flex-grow: 0; background-color: rgba(0, 0, 0, 0); flex-direction: row; width: 80%;">
+                        <ui:VisualElement name="SpecStatusBar" style="flex-grow: 0; background-color: rgba(0, 0, 0, 0); flex-direction: row; width: 75%;">
                             <ui:VisualElement name="OfficialExample" class="status-bar-official" />
                             <ui:VisualElement name="AddExample" class="status-bar-add-preview" />
                             <ui:VisualElement name="RemoveExample" class="status-bar-remove-preview" />
@@ -83,7 +90,7 @@
                     </ui:VisualElement>
                 </ui:VisualElement>
             </ui:VisualElement>
-            <ui:VisualElement name="CostArea" style="flex-grow: 1; background-color: rgba(142, 60, 137, 0.41); height: 10%;">
+            <ui:VisualElement name="CostArea" style="flex-grow: 1; background-color: rgba(142, 60, 137, 0); height: 10%;">
                 <ui:Label tabindex="-1" text="Cost: £0" display-tooltip-when-elided="true" name="CostLabel" class="menu-label-generic" style="-unity-text-align: upper-center;" />
             </ui:VisualElement>
         </ui:VisualElement>

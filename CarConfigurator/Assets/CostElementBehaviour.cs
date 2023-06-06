@@ -8,6 +8,7 @@ public class CostElementBehaviour : MonoBehaviour
 {
     [SerializeField]
     private char currencySymbol;
+    private static char currencySymbolConstant = '£';
     [SerializeField]
     private string currencyPrefix = "Cost";
     [SerializeField]
@@ -21,6 +22,7 @@ public class CostElementBehaviour : MonoBehaviour
         VisualElement rootVisualElement = configuratorUi.rootVisualElement;
         costLabel = rootVisualElement.Q<Label>("CostLabel");
         costLabel.text = generateCostText();
+        currencySymbolConstant = currencySymbol;
     }
 
     private string generateCostText()
@@ -39,9 +41,8 @@ public class CostElementBehaviour : MonoBehaviour
         costLabel.text = generateCostText();
     }
 
-    // Update is called once per frame
-    void Update()
+    public static string GenerateCurrencyText(int value)
     {
-        
+        return currencySymbolConstant + value.ToString();
     }
 }

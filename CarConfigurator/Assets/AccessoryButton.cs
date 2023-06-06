@@ -21,7 +21,7 @@ public class AccessoryButton
         Label nameLabel = accessoryElement.Q<Label>(NAME_LABEL_NAME);
         nameLabel.text = buttonData.AccessoryName;
         Label costLabel = accessoryElement.Q<Label>(COST_LABEL_NAME);
-        costLabel.text = buttonData.Cost.ToString();
+        costLabel.text = CostElementBehaviour.GenerateCurrencyText(buttonData.Cost);
         VisualElement iconElement = accessoryElement.Q<VisualElement>(ICON_ELEMENT_NAME);
         iconElement.style.backgroundImage = new StyleBackground(buttonData.Icon);
         accessoryElement.RegisterCallback<MouseOverEvent>(ButtonEnterEvent);

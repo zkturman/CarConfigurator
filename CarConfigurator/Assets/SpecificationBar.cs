@@ -51,19 +51,19 @@ public class SpecificationBar
 
     public void PreviewValue(int previewToAdd)
     {
-        int officialPieces = baseValue;
-        int previewPieces = Mathf.Abs(previewToAdd);
         string previewClass = ADDED_PREVIEW_BAR_PIECE_CLASS;
-        if (previewToAdd < 0)
+        int officialPieces = currentValue;
+        int statDifference = baseValue + previewToAdd - currentValue;
+        int previewPieces = Mathf.Abs(statDifference);
+        if (statDifference < 0)
         {
-            officialPieces = baseValue + previewToAdd;
+            officialPieces = currentValue + statDifference;
             previewClass = REMOVED_PREVIEW_BAR_PIECE_CLASS;
         }
         if (officialPieces < 0)
         {
             previewPieces = officialPieces;
             officialPieces = 0;
-            
         }
         statusBarElement.Clear();
         for (int i = 0; i < officialPieces; i++)
