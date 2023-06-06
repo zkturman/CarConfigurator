@@ -17,6 +17,12 @@ public class ButtonEventData
     private PaintColourSelector colourSelector;
     public PaintColourSelector ColourSelector { get => colourSelector; }
     [SerializeField]
+    private AccessorySelector accessorySelector;
+    public AccessorySelector AccessorySelector { get => accessorySelector; }
+    [SerializeField]
+    private SpecManager specManager;
+    public SpecManager SpecManager { get => specManager; }
+    [SerializeField]
     private UIDocument carConfigurator;
     public UIDocument CarConfigurator { get => carConfigurator; }
 }
