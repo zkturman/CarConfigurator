@@ -6,6 +6,8 @@ public class PaintColourSelector : MonoBehaviour
 {
     [SerializeField]
     private CostElementBehaviour costBehaviour;
+    [SerializeField]
+    private ModelSelector modelSelector;
     private PaintColourData currentColour;
     public void UpdateColour(PaintColourData newColour)
     {
@@ -17,6 +19,16 @@ public class PaintColourSelector : MonoBehaviour
             }
             costBehaviour.UpdateCostText(newColour.Cost);
             currentColour = newColour;
+            modelSelector.SetModelColour(currentColour.PaintColour);
+        }
+        else
+        {
+            modelSelector.SetModelColour(Color.clear);
+            if (currentColour != null)
+            {
+                costBehaviour.UpdateCostText(currentColour.Cost * -1);
+            }
+            currentColour = null;
         }
     }
 }

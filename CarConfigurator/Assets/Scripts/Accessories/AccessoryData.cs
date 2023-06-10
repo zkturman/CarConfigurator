@@ -20,6 +20,9 @@ public class AccessoryData
     private int cost;
     public int Cost { get => cost; }
     [SerializeField]
+    private GameObject prefab;
+    public GameObject Prefab { get => prefab; }
+    [SerializeField]
     private StatusModifier modifiers;
     public StatusModifier Modifier { get => modifiers; }
 }

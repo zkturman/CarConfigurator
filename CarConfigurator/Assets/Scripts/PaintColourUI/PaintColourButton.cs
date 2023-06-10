@@ -27,10 +27,6 @@ public class PaintColourButton
         colourFill.style.unityBackgroundImageTintColor = buttonData.PaintColour;
     }
 
-    public void RegisterMouseOverEvent(string hoverClass)
-    {
-    }
-
     private void ButtonEnterEvent(MouseOverEvent evt)
     {
         colourElement.BringToFront();
@@ -46,14 +42,19 @@ public class PaintColourButton
     private void ButtonClickEvent(MouseDownEvent evt)
     {
         colourElement.ToggleInClassList(eventData.ClickClassName);
+        eventData.SoundFxSource.PlayOneShot(eventData.ClickClip);
     }
 
     private void ButtonReleaseEvent(MouseUpEvent evt)
     {
-        colourElement.ToggleInClassList(eventData.ClickClassName);
-        eventData.ColourSelector.UpdateColour(buttonData);
+        if (colourElement.ClassListContains(eventData.ClickClassName))
+        {
+            colourElement.ToggleInClassList(eventData.ClickClassName);
+            eventData.ColourSelector.UpdateColour(buttonData);
+            eventData.SoundFxSource.PlayOneShot(eventData.ApplyClip);
+        }
     }
-    
+
     public void RegisterMouseDownEvent(EventCallback<MouseDownEvent> eventToRegister)
     {
         colourElement.RegisterCallback(eventToRegister);

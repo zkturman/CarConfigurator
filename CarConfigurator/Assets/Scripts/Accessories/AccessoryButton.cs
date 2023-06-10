@@ -46,12 +46,17 @@ public class AccessoryButton
     private void ButtonClickEvent(MouseDownEvent evt)
     {
         accessoryElement.ToggleInClassList(eventData.ClickClassName);
+        eventData.SoundFxSource.PlayOneShot(eventData.ClickClip);
     }
 
     private void ButtonReleaseEvent(MouseUpEvent evt)
     {
-        accessoryElement.ToggleInClassList(eventData.ClickClassName);
-        eventData.AccessorySelector.UpdateAccessory(buttonData);
-        eventData.SpecManager.UpdateSpecs(buttonData.Modifier);
+        if (accessoryElement.ClassListContains(eventData.ClickClassName))
+        {
+            accessoryElement.ToggleInClassList(eventData.ClickClassName);
+            eventData.AccessorySelector.UpdateAccessory(buttonData);
+            eventData.SpecManager.UpdateSpecs(buttonData.Modifier);
+            eventData.SoundFxSource.PlayOneShot(eventData.ApplyClip);
+        }
     }
 }

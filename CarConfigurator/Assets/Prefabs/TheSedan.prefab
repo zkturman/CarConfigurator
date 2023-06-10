@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2952194044846398703}
   - component: {fileID: 8006939906529033848}
   - component: {fileID: 1495079274544181002}
+  - component: {fileID: 109705565413171818}
   m_Layer: 0
   m_Name: Base
   m_TagString: Untagged
@@ -105,6 +106,18 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &109705565413171818
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1100744968062965206}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89bffe6a9c933b14c9301260ead266e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2045477899284731551
 GameObject:
   m_ObjectHideFlags: 0
@@ -117,6 +130,7 @@ GameObject:
   - component: {fileID: 7568642546127222620}
   - component: {fileID: 3962200736864143712}
   - component: {fileID: 6611337950733031373}
+  - component: {fileID: 7346900663383675854}
   m_Layer: 0
   m_Name: Roof
   m_TagString: Untagged
@@ -210,6 +224,18 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &7346900663383675854
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2045477899284731551}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89bffe6a9c933b14c9301260ead266e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3402378770723152750
 GameObject:
   m_ObjectHideFlags: 0
@@ -259,6 +285,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8823624766785163719}
+  - component: {fileID: 8793501622471793641}
+  - component: {fileID: 812165349687433848}
   m_Layer: 0
   m_Name: TheSedan
   m_TagString: Untagged
@@ -283,6 +311,35 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8793501622471793641
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6552511491712119514}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 232b9e2aa99b42d46982ae4f88f4cbea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  paintSurfaces:
+  - {fileID: 9143947791639677936}
+  - {fileID: 7346900663383675854}
+  - {fileID: 109705565413171818}
+--- !u!114 &812165349687433848
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6552511491712119514}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a1dd1c911578a847a1d2e1a802621fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponAttachmentPoint: {x: -0.9, y: -0.7, z: 0}
 --- !u!1 &7615778089249399617
 GameObject:
   m_ObjectHideFlags: 0
@@ -295,6 +352,7 @@ GameObject:
   - component: {fileID: 1225204207190793604}
   - component: {fileID: 2491380614472533425}
   - component: {fileID: 4727082189924885005}
+  - component: {fileID: 9143947791639677936}
   m_Layer: 0
   m_Name: Middle
   m_TagString: Untagged
@@ -388,6 +446,18 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &9143947791639677936
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7615778089249399617}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89bffe6a9c933b14c9301260ead266e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &980734379070936554
 PrefabInstance:
   m_ObjectHideFlags: 0

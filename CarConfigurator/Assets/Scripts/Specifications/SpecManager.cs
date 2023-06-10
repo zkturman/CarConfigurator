@@ -20,25 +20,22 @@ public class SpecManager : MonoBehaviour
     [SerializeField]
     private UIDocument costConfigurator;
 
-    private void Start()
+    private void Awake()
     {
         speedBar = new SpecificationBar(speedBarData, costConfigurator);
         handlingBar = new SpecificationBar(handlingBarData, costConfigurator);
         weightBar = new SpecificationBar(weightBarData, costConfigurator);
         attackBar = new SpecificationBar(attackBarData, costConfigurator);
-        speedBar.SetDefaultValue(5);
-        handlingBar.SetDefaultValue(5);
-        weightBar.SetDefaultValue(5);
-        attackBar.SetDefaultValue(5);
         RestoreSpecs();
     }
 
     public void SetDefaultValues(StatusModifier defaultValues)
     {
-        speedBar.SetDefaultValue(5);
-        handlingBar.SetDefaultValue(5);
-        weightBar.SetDefaultValue(5);
-        attackBar.SetDefaultValue(5);
+        speedBar.SetDefaultValue(defaultValues.Speed);
+        handlingBar.SetDefaultValue(defaultValues.Handling);
+        weightBar.SetDefaultValue(defaultValues.Weight);
+        attackBar.SetDefaultValue(defaultValues.Attack);
+        RestoreSpecs();
     }
 
     public void PreviewSpecs(StatusModifier modifierToPreview)

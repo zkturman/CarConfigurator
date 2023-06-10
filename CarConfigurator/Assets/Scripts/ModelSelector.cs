@@ -12,6 +12,7 @@ public class ModelSelector : MonoBehaviour
     private Color currentColour = Color.white;
     [SerializeField]
     private CostElementBehaviour costBehaviour;
+    private GameObject currentWeapon;
     [SerializeField]
     private ButtonEventData eventData;
     private VisualElement leftButton;
@@ -26,6 +27,8 @@ public class ModelSelector : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        currentColour = Color.clear;
+        currentWeapon = null;
         setupDocumentInfo();
         if (modelChoices.Length > 0)
         {
@@ -55,12 +58,14 @@ public class ModelSelector : MonoBehaviour
     {
         leftButton.ToggleInClassList(eventData.ClickClassName);
         updateModelNumber(-1);
+        eventData.SoundFxSource.PlayOneShot(eventData.ApplyClip);
     }
 
     private void RightButtonReleaseEvent(MouseUpEvent evt)
     {
         rightButton.ToggleInClassList(eventData.ClickClassName);
         updateModelNumber(1);
+        eventData.SoundFxSource.PlayOneShot(eventData.ApplyClip);
     }
 
     private void updateModelNumber(int direction)
@@ -78,16 +83,21 @@ public class ModelSelector : MonoBehaviour
         modelName.text = modelChoices[modelIndex].Name;
         costInfo.text = CostElementBehaviour.GenerateCurrencyText(modelChoices[modelIndex].Cost);
         costBehaviour.UpdateCostText(modelChoices[modelIndex].Cost);
+        eventData.SpecManager.SetDefaultValues(modelChoices[modelIndex].BaseStats);
+        SetModelColour(currentColour);
+        SetWeapon(currentWeapon);
     }
 
     private void LeftButtonClickEvent(MouseDownEvent evt)
     {
         leftButton.ToggleInClassList(eventData.ClickClassName);
+        eventData.SoundFxSource.PlayOneShot(eventData.ClickClip);
     }
 
     private void RightButtonClickEvent(MouseDownEvent evt)
     {
         rightButton.ToggleInClassList(eventData.ClickClassName);
+        eventData.SoundFxSource.PlayOneShot(eventData.ClickClip);
     }
 
     private void LeftButtonEnterEvent(MouseOverEvent evt)
@@ -108,5 +118,33 @@ public class ModelSelector : MonoBehaviour
     private void RightButtonExitEvent(MouseOutEvent evt)
     {
         rightButton.ToggleInClassList(eventData.HoverClassName);
+    }
+
+    public void SetModelColour(Color colourToSet)
+    {
+        CarPaintApplicator carPainter = currentModel.GetComponent<CarPaintApplicator>();
+        currentColour = colourToSet;
+        if (colourToSet == Color.clear)
+        {
+            carPainter.ResetPaint();
+        }
+        else
+        {
+            carPainter.PaintCar(colourToSet);
+        }
+    }
+
+    public void SetWeapon(GameObject weaponPrefab)
+    {
+        WeaponApplicator weaponAdder = currentModel.GetComponent<WeaponApplicator>();
+        currentWeapon = weaponPrefab;
+        if (weaponPrefab == null)
+        {
+            weaponAdder.RemoveWeapon();
+        }
+        else
+        {
+            weaponAdder.AddWeapon(weaponPrefab);
+        }
     }
 }

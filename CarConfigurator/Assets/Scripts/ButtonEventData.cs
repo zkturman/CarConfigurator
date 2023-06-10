@@ -25,4 +25,13 @@ public class ButtonEventData
     [SerializeField]
     private UIDocument carConfigurator;
     public UIDocument CarConfigurator { get => carConfigurator; }
+    [SerializeField]
+    private AudioSource soundFxSource;
+    public AudioSource SoundFxSource { get => soundFxSource; }
+    [SerializeField]
+    private AudioClip clickClip;
+    public AudioClip ClickClip { get => clickClip; }
+    [SerializeField]
+    private AudioClip applyClip;
+    public AudioClip ApplyClip { get => applyClip; }
 }

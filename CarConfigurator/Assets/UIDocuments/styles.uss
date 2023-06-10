@@ -136,3 +136,6 @@
     -unity-background-scale-mode: scale-to-fit;
     -unity-background-image-tint-color: rgb(255, 255, 255);
 }
+
+.button-selected {
+}

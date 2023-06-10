@@ -27,12 +27,13 @@ public class SpecificationBar
 
     public void SetDefaultValue(int baseValue)
     {
+        int currentBonus = currentValue - this.baseValue;
         if (baseValue < 0)
         {
             baseValue = 0;
         }
         this.baseValue = baseValue;
-        currentValue = baseValue;
+        currentValue = baseValue + currentBonus;
     }
 
     public void UpdateValue(int valueToAdd)
